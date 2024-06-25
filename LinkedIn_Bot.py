@@ -99,7 +99,8 @@ def send_invitations_on_current_page():
                 recruiter_name = result.find_element(By.CLASS_NAME, 'entity-result__title-text').text
 
                 # Récupérer le nom de l'entreprise
-                company_name = result.find_element(By.CLASS_NAME, 'entity-result__primary-subtitle').text
+                #company_name = result.find_element(By.CLASS_NAME, 'entity-result__primary-subtitle').text
+                company_name = result.find_element(By.XPATH, './/span[contains(@class, "entity-result__primary-subtitle")]').text
 
                 print(f'Envoi d\'une invitation à {recruiter_name} de {company_name}')  # Ajouter une impression pour chaque invitation envoyée
                 
